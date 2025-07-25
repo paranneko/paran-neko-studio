@@ -152,8 +152,8 @@ export function PortfolioGallery() {
         const computedStyle = window.getComputedStyle(gallery);
         const gap = parseFloat(computedStyle.gap) || 24; // fallback to 24px
         
-        // Scroll slightly less than full width to show preview of next image
-        const scrollAmount = itemWidth + gap - 60; // Show 60px of next image
+        // Scroll exactly one full image width
+        const scrollAmount = itemWidth + gap;
         const scrollLeft = direction === 'left' ? -scrollAmount : scrollAmount;
         gallery.scrollBy({ left: scrollLeft, behavior: 'smooth' });
       }
@@ -175,7 +175,7 @@ export function PortfolioGallery() {
         {/* Horizontal Scrolling Gallery */}
         <div className="relative">
           <div 
-            className="gallery-container flex space-x-6 overflow-x-auto pb-6" 
+            className="gallery-container flex space-x-6 overflow-x-auto pb-6 pl-16 pr-16" 
             id="mainGallery"
           >
             {portfolioItems.map((item) => (
