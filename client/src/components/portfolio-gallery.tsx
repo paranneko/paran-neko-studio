@@ -200,7 +200,7 @@ export function PortfolioGallery() {
           <div 
             className="gallery-container flex space-x-6 overflow-x-auto pb-6" 
             id="mainGallery"
-            style={{ paddingLeft: '64px', paddingRight: '420px' }}
+            style={{ paddingLeft: '64px', paddingRight: 'calc(100vw - 448px)' }}
           >
             {portfolioItems.map((item) => (
               <div
