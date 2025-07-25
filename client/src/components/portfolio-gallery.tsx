@@ -142,13 +142,20 @@ export function PortfolioGallery() {
   const scrollGallery = (direction: 'left' | 'right') => {
     const gallery = document.getElementById('mainGallery');
     if (gallery) {
-      // Calculate exact width: image width (320px) + gap (24px = space-x-6)
-      const itemWidth = 320; // w-80 = 20rem = 320px
-      const gap = 24; // space-x-6 = 1.5rem = 24px
-      const scrollAmount = itemWidth + gap;
-      
-      const scrollLeft = direction === 'left' ? -scrollAmount : scrollAmount;
-      gallery.scrollBy({ left: scrollLeft, behavior: 'smooth' });
+      // Get the first image item to calculate its actual width + margin
+      const firstItem = gallery.querySelector('.gallery-item') as HTMLElement;
+      if (firstItem) {
+        const itemRect = firstItem.getBoundingClientRect();
+        const itemWidth = itemRect.width;
+        
+        // Get computed style to find the actual gap
+        const computedStyle = window.getComputedStyle(gallery);
+        const gap = parseFloat(computedStyle.gap) || 24; // fallback to 24px
+        
+        const scrollAmount = itemWidth + gap;
+        const scrollLeft = direction === 'left' ? -scrollAmount : scrollAmount;
+        gallery.scrollBy({ left: scrollLeft, behavior: 'smooth' });
+      }
     }
   };
 
@@ -173,13 +180,13 @@ export function PortfolioGallery() {
             {portfolioItems.map((item) => (
               <div
                 key={item.id}
-                className="flex-none relative group cursor-pointer image-hover"
+                className="gallery-item flex-none relative group cursor-pointer image-hover"
                 onClick={() => setSelectedImage(item)}
               >
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-80 h-60 object-cover rounded-2xl shadow-lg"
+                  className="w-96 h-72 object-cover rounded-2xl shadow-lg"
                 />
                 <Button
                   size="icon"
