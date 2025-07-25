@@ -45,7 +45,10 @@ export function FeaturesSection() {
   const [activeFeature, setActiveFeature] = useState<string>("precision");
 
   const toggleFeature = (featureId: string) => {
-    setActiveFeature(activeFeature === featureId ? "" : featureId);
+    // Always keep one item open - if clicking the currently active item, don't close it
+    if (activeFeature !== featureId) {
+      setActiveFeature(featureId);
+    }
   };
 
   const activeFeatureData = features.find(f => f.id === activeFeature);

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { RainbowText } from "@/components/rainbow-text";
 import { PortfolioGallery } from "@/components/portfolio-gallery";
 import { FeaturesSection } from "@/components/features-section";
+import { EssentialsSection } from "@/components/essentials-section";
 import { Lightbulb, Box, ServerCog, Gem, Instagram, Twitter, Linkedin, Menu } from "lucide-react";
 
 export default function Home() {
@@ -72,6 +73,9 @@ export default function Home() {
 
       {/* Features Section */}
       <FeaturesSection />
+
+      {/* Essentials Section */}
+      <EssentialsSection />
 
       {/* Technology Section */}
       <section id="about" className="py-20">
