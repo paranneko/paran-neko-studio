@@ -196,11 +196,11 @@ export function PortfolioGallery() {
         </div>
         
         {/* Horizontal Scrolling Gallery */}
-        <div className="relative">
+        <div className="relative max-w-7xl mx-auto">
           <div 
             className="gallery-container flex space-x-6 overflow-x-auto pb-6" 
             id="mainGallery"
-            style={{ paddingLeft: '64px', paddingRight: 'calc(100vw - 448px)' }}
+            style={{ paddingLeft: '64px', paddingRight: 'calc(100% - 448px)' }}
           >
             {portfolioItems.map((item) => (
               <div
