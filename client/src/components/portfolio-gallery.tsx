@@ -153,11 +153,10 @@ export function PortfolioGallery() {
         const computedStyle = window.getComputedStyle(gallery);
         const gap = parseFloat(computedStyle.gap) || 24;
         
-        // Calculate how many full images we can scroll
+        // Calculate maximum scroll position
+        // We can scroll (itemsCount - 1) times to show each image with left offset
         const itemsCount = portfolioItems.length;
-        const totalItemsWidth = (itemWidth + gap) * (itemsCount - 1); // -1 because last item doesn't need gap
-        const paddingLeft = 64; // pl-16 = 4rem = 64px
-        const maxScrollLeft = totalItemsWidth - paddingLeft;
+        const maxScrollLeft = (itemWidth + gap) * (itemsCount - 1);
         
         setCanScrollLeft(scrollLeft > 10); // Small threshold for floating point
         setCanScrollRight(scrollLeft < maxScrollLeft - 10);
@@ -191,15 +190,13 @@ export function PortfolioGallery() {
         const scrollAmount = itemWidth + gap;
         
         if (direction === 'right') {
-          // Calculate the correct max scroll position based on items
+          // Calculate the maximum scroll position (we can scroll itemsCount-1 times)
           const itemsCount = portfolioItems.length;
-          const totalItemsWidth = (itemWidth + gap) * (itemsCount - 1);
-          const paddingLeft = 64; // pl-16 = 4rem = 64px
-          const maxScrollLeft = totalItemsWidth - paddingLeft;
+          const maxScrollLeft = scrollAmount * (itemsCount - 1);
           const nextScrollPosition = gallery.scrollLeft + scrollAmount;
           
           if (nextScrollPosition >= maxScrollLeft) {
-            // Scroll to the exact calculated end position
+            // Scroll to the exact end position to show last image with left offset
             gallery.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
           } else {
             gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
