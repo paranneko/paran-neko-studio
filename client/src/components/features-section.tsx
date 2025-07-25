@@ -62,7 +62,8 @@ export function FeaturesSection() {
           </h2>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-16 items-start">
           {/* Left side - Expandable list */}
           <div className="space-y-4">
             {features.map((feature) => (
@@ -107,6 +108,44 @@ export function FeaturesSection() {
               </div>
             )}
           </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="lg:hidden space-y-4">
+          {features.map((feature) => (
+            <div key={feature.id} className="border border-border rounded-2xl overflow-hidden">
+              <Button
+                variant="ghost"
+                className="w-full p-6 text-left justify-between h-auto hover:bg-muted/50"
+                onClick={() => toggleFeature(feature.id)}
+              >
+                <div>
+                  <h3 className="text-xl font-semibold mb-1">{feature.title}</h3>
+                </div>
+                {activeFeature === feature.id ? (
+                  <ChevronUp className="h-5 w-5 text-muted-foreground flex-shrink-0" />
+                ) : (
+                  <ChevronDown className="h-5 w-5 text-muted-foreground flex-shrink-0" />
+                )}
+              </Button>
+              
+              {activeFeature === feature.id && (
+                <div className="px-6 pb-6 space-y-6">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                  <div className="relative">
+                    <img
+                      src={feature.image}
+                      alt={feature.imageAlt}
+                      className="w-full h-[300px] object-cover rounded-2xl shadow-lg"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
