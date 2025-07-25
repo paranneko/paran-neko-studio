@@ -1,6 +1,5 @@
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface ImageModalProps {
@@ -25,14 +24,6 @@ export function ImageModal({ isOpen, onClose, image }: ImageModalProps) {
         </VisuallyHidden>
         <div className="grid lg:grid-cols-2 h-full">
           <div className="relative">
-            <Button
-              variant="secondary"
-              size="icon"
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white border-0"
-              onClick={onClose}
-            >
-              <X className="h-4 w-4" />
-            </Button>
             <img
               src={image.src}
               alt={image.alt}

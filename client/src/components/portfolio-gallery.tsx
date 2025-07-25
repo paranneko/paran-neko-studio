@@ -148,7 +148,17 @@ export function PortfolioGallery() {
       const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
       
       setCanScrollLeft(scrollLeft > 10);
-      setCanScrollRight(scrollLeft < maxScrollLeft - 10);
+      // Calculate the position where last image appears with correct left offset
+      const imageWidth = 384;
+      const gap = 24;
+      const leftPadding = 64;
+      const rightPadding = 64;
+      const totalImages = portfolioItems.length;
+      
+      // Calculate the scroll position where last image has correct left offset
+      const lastImageTargetPosition = (totalImages - 1) * (imageWidth + gap) + leftPadding - leftPadding;
+      
+      setCanScrollRight(scrollLeft < lastImageTargetPosition);
     }
   };
 
@@ -196,11 +206,11 @@ export function PortfolioGallery() {
         </div>
         
         {/* Horizontal Scrolling Gallery */}
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative">
           <div 
             className="gallery-container flex space-x-6 overflow-x-auto pb-6" 
             id="mainGallery"
-            style={{ paddingLeft: '64px', paddingRight: 'calc(100% - 448px)' }}
+            style={{ paddingLeft: '64px', paddingRight: '64px' }}
           >
             {portfolioItems.map((item) => (
               <div
