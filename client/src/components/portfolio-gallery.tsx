@@ -142,7 +142,11 @@ export function PortfolioGallery() {
   const scrollGallery = (direction: 'left' | 'right') => {
     const gallery = document.getElementById('mainGallery');
     if (gallery) {
-      const scrollAmount = 320; // Width of one item plus gap
+      // Calculate exact width: image width (320px) + gap (24px = space-x-6)
+      const itemWidth = 320; // w-80 = 20rem = 320px
+      const gap = 24; // space-x-6 = 1.5rem = 24px
+      const scrollAmount = itemWidth + gap;
+      
       const scrollLeft = direction === 'left' ? -scrollAmount : scrollAmount;
       gallery.scrollBy({ left: scrollLeft, behavior: 'smooth' });
     }
