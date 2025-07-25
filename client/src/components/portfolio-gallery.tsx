@@ -145,22 +145,10 @@ export function PortfolioGallery() {
     const gallery = document.getElementById('mainGallery');
     if (gallery) {
       const scrollLeft = gallery.scrollLeft;
-      const firstItem = gallery.querySelector('.gallery-item') as HTMLElement;
+      const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
       
-      if (firstItem) {
-        const itemRect = firstItem.getBoundingClientRect();
-        const itemWidth = itemRect.width;
-        const computedStyle = window.getComputedStyle(gallery);
-        const gap = parseFloat(computedStyle.gap) || 24;
-        
-        // Calculate maximum scroll position
-        // We can scroll (itemsCount - 1) times to show each image with left offset
-        const itemsCount = portfolioItems.length;
-        const maxScrollLeft = (itemWidth + gap) * (itemsCount - 1);
-        
-        setCanScrollLeft(scrollLeft > 10); // Small threshold for floating point
-        setCanScrollRight(scrollLeft < maxScrollLeft - 10);
-      }
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < maxScrollLeft - 10);
     }
   };
 
@@ -189,21 +177,8 @@ export function PortfolioGallery() {
         // Calculate scroll amount
         const scrollAmount = itemWidth + gap;
         
-        if (direction === 'right') {
-          // Calculate the maximum scroll position (we can scroll itemsCount-1 times)
-          const itemsCount = portfolioItems.length;
-          const maxScrollLeft = scrollAmount * (itemsCount - 1);
-          const nextScrollPosition = gallery.scrollLeft + scrollAmount;
-          
-          if (nextScrollPosition >= maxScrollLeft) {
-            // Scroll to the exact end position to show last image with left offset
-            gallery.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
-          } else {
-            gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-          }
-        } else {
-          gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
+        const scrollLeft = direction === 'left' ? -scrollAmount : scrollAmount;
+        gallery.scrollBy({ left: scrollLeft, behavior: 'smooth' });
       }
     }
   };
@@ -223,8 +198,9 @@ export function PortfolioGallery() {
         {/* Horizontal Scrolling Gallery */}
         <div className="relative">
           <div 
-            className="gallery-container flex space-x-6 overflow-x-auto pb-6 pl-16 pr-16" 
+            className="gallery-container flex space-x-6 overflow-x-auto pb-6" 
             id="mainGallery"
+            style={{ paddingLeft: '64px', paddingRight: '400px' }}
           >
             {portfolioItems.map((item) => (
               <div
