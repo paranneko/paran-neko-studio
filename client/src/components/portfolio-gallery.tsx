@@ -145,10 +145,23 @@ export function PortfolioGallery() {
     const gallery = document.getElementById('mainGallery');
     if (gallery) {
       const scrollLeft = gallery.scrollLeft;
-      const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
+      const firstItem = gallery.querySelector('.gallery-item') as HTMLElement;
       
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < maxScrollLeft - 1); // -1 for floating point precision
+      if (firstItem) {
+        const itemRect = firstItem.getBoundingClientRect();
+        const itemWidth = itemRect.width;
+        const computedStyle = window.getComputedStyle(gallery);
+        const gap = parseFloat(computedStyle.gap) || 24;
+        
+        // Calculate how many full images we can scroll
+        const itemsCount = portfolioItems.length;
+        const totalItemsWidth = (itemWidth + gap) * (itemsCount - 1); // -1 because last item doesn't need gap
+        const paddingLeft = 64; // pl-16 = 4rem = 64px
+        const maxScrollLeft = totalItemsWidth - paddingLeft;
+        
+        setCanScrollLeft(scrollLeft > 10); // Small threshold for floating point
+        setCanScrollRight(scrollLeft < maxScrollLeft - 10);
+      }
     }
   };
 
@@ -178,12 +191,15 @@ export function PortfolioGallery() {
         const scrollAmount = itemWidth + gap;
         
         if (direction === 'right') {
-          // Check if this would be the last scroll
-          const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
+          // Calculate the correct max scroll position based on items
+          const itemsCount = portfolioItems.length;
+          const totalItemsWidth = (itemWidth + gap) * (itemsCount - 1);
+          const paddingLeft = 64; // pl-16 = 4rem = 64px
+          const maxScrollLeft = totalItemsWidth - paddingLeft;
           const nextScrollPosition = gallery.scrollLeft + scrollAmount;
           
           if (nextScrollPosition >= maxScrollLeft) {
-            // Scroll to the exact end position
+            // Scroll to the exact calculated end position
             gallery.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
           } else {
             gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
