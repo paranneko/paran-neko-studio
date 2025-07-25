@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(29, 8%, 11%);
+  --muted: hsl(60, 5%, 96%);
+  --muted-foreground: hsl(25, 5%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(29, 8%, 11%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(29, 8%, 11%);
+  --border: hsl(20, 6%, 90%);
+  --input: hsl(20, 6%, 90%);
+  --primary: hsl(29, 8%, 11%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(60, 5%, 96%);
+  --secondary-foreground: hsl(24, 10%, 10%);
+  --accent: hsl(60, 5%, 96%);
+  --accent-foreground: hsl(24, 10%, 10%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(60, 9%, 98%);
+  --ring: hsl(29, 8%, 11%);
+  --radius: 0.5rem;
+  
+  --apple-gray: hsl(29, 8%, 11%);
+  --apple-light: hsl(60, 5%, 97%);
+  --apple-medium: hsl(25, 5%, 53%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(0, 0%, 98%);
+  --primary-foreground: hsl(240, 6%, 10%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 4%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .rainbow-gradient {
+    background: linear-gradient(90deg, 
+      hsl(0, 80%, 65%) 0%, 
+      hsl(180, 70%, 55%) 16.67%, 
+      hsl(220, 75%, 60%) 33.33%, 
+      hsl(140, 50%, 65%) 50%, 
+      hsl(45, 85%, 70%) 66.67%, 
+      hsl(280, 60%, 70%) 83.33%, 
+      hsl(0, 80%, 65%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 100%;
+    animation: rainbow-flow 3s ease-in-out infinite;
+  }
+  
+  @keyframes rainbow-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .gallery-container {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .gallery-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .modal-backdrop {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .image-hover {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .image-hover:hover {
+    transform: scale(1.02);
+  }
+  
+  .nav-button {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .nav-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .plus-icon {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .plus-icon:hover {
+    transform: scale(1.2) rotate(90deg);
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
