@@ -152,7 +152,8 @@ export function PortfolioGallery() {
         const computedStyle = window.getComputedStyle(gallery);
         const gap = parseFloat(computedStyle.gap) || 24; // fallback to 24px
         
-        const scrollAmount = itemWidth + gap;
+        // Scroll slightly less than full width to show preview of next image
+        const scrollAmount = itemWidth + gap - 60; // Show 60px of next image
         const scrollLeft = direction === 'left' ? -scrollAmount : scrollAmount;
         gallery.scrollBy({ left: scrollLeft, behavior: 'smooth' });
       }
@@ -186,7 +187,7 @@ export function PortfolioGallery() {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-96 h-72 object-cover rounded-2xl shadow-lg"
+                  className="w-96 h-96 object-cover rounded-2xl shadow-lg"
                 />
                 <Button
                   size="icon"
