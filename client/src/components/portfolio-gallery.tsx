@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
 import { ImageModal } from "./image-modal";
@@ -138,6 +138,28 @@ const portfolioItems = [
 
 export function PortfolioGallery() {
   const [selectedImage, setSelectedImage] = useState<typeof portfolioItems[0] | null>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollButtons = () => {
+    const gallery = document.getElementById('mainGallery');
+    if (gallery) {
+      const scrollLeft = gallery.scrollLeft;
+      const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
+      
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < maxScrollLeft - 1); // -1 for floating point precision
+    }
+  };
+
+  useEffect(() => {
+    const gallery = document.getElementById('mainGallery');
+    if (gallery) {
+      updateScrollButtons();
+      gallery.addEventListener('scroll', updateScrollButtons);
+      return () => gallery.removeEventListener('scroll', updateScrollButtons);
+    }
+  }, []);
 
   const scrollGallery = (direction: 'left' | 'right') => {
     const gallery = document.getElementById('mainGallery');
@@ -152,10 +174,23 @@ export function PortfolioGallery() {
         const computedStyle = window.getComputedStyle(gallery);
         const gap = parseFloat(computedStyle.gap) || 24; // fallback to 24px
         
-        // Scroll exactly one full image width
+        // Calculate scroll amount
         const scrollAmount = itemWidth + gap;
-        const scrollLeft = direction === 'left' ? -scrollAmount : scrollAmount;
-        gallery.scrollBy({ left: scrollLeft, behavior: 'smooth' });
+        
+        if (direction === 'right') {
+          // Check if this would be the last scroll
+          const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
+          const nextScrollPosition = gallery.scrollLeft + scrollAmount;
+          
+          if (nextScrollPosition >= maxScrollLeft) {
+            // Scroll to the exact end position
+            gallery.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+          } else {
+            gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+        } else {
+          gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
       }
     }
   };
@@ -204,16 +239,22 @@ export function PortfolioGallery() {
             <Button
               variant="secondary"
               size="icon"
-              className="nav-button w-12 h-12 bg-white/70 hover:bg-white/90 rounded-full shadow-lg border-0"
-              onClick={() => scrollGallery('left')}
+              className={`nav-button w-12 h-12 bg-white/70 hover:bg-white/90 rounded-full shadow-lg border-0 transition-opacity ${
+                !canScrollLeft ? 'opacity-40 cursor-not-allowed' : ''
+              }`}
+              onClick={() => canScrollLeft && scrollGallery('left')}
+              disabled={!canScrollLeft}
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
             <Button
               variant="secondary"
               size="icon"
-              className="nav-button w-12 h-12 bg-white/70 hover:bg-white/90 rounded-full shadow-lg border-0"
-              onClick={() => scrollGallery('right')}
+              className={`nav-button w-12 h-12 bg-white/70 hover:bg-white/90 rounded-full shadow-lg border-0 transition-opacity ${
+                !canScrollRight ? 'opacity-40 cursor-not-allowed' : ''
+              }`}
+              onClick={() => canScrollRight && scrollGallery('right')}
+              disabled={!canScrollRight}
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
