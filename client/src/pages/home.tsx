@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { RainbowText } from "@/components/rainbow-text";
 import { PortfolioGallery } from "@/components/portfolio-gallery";
+import { FeaturesSection } from "@/components/features-section";
 import { Lightbulb, Box, ServerCog, Gem, Instagram, Twitter, Linkedin, Menu } from "lucide-react";
 
 export default function Home() {
@@ -68,6 +69,9 @@ export default function Home() {
       <div id="portfolio">
         <PortfolioGallery />
       </div>
+
+      {/* Features Section */}
+      <FeaturesSection />
 
       {/* Technology Section */}
       <section id="about" className="py-20">
