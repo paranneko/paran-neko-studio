@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { RainbowText } from "@/components/rainbow-text";
+import { RainbowText, RainbowTextBlue } from "@/components/rainbow-text";
 import { PortfolioGallery } from "@/components/portfolio-gallery";
 import { FeaturesSection } from "@/components/features-section";
 import { EssentialsSection } from "@/components/essentials-section";
 import { Lightbulb, Box, ServerCog, Gem, Instagram, Twitter, Linkedin, Menu } from "lucide-react";
+import maiScreenImage from "../images/mai_screen.jpg";
+import catIcon from "../images/paran_neko.png";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -19,7 +21,14 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-xl z-50 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="text-xl font-semibold">3D Print Studio</div>
+            <div className="flex items-center space-x-2 text-xl font-semibold">
+            <img 
+                src={catIcon} 
+                alt="studio logo"
+                className="h-6 w-6" 
+            />
+            <span>paran neko studio</span>
+            </div>
             <div className="hidden md:flex space-x-8">
               <button 
                 onClick={() => scrollToSection('portfolio')}
@@ -48,14 +57,29 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 sm:px-8 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
-            Bringing <RainbowText>imagination</RainbowText> to life
-          </h1>
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Discover a curated collection of precision 3D prints that push the boundaries of creativity and craftsmanship.
-          </p>
+      <section className="pt-32 pb-20 px-6 sm:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          {/* Text content container */}
+          <div className="mb-12 flex flex-col items-start md:flex-row md:justify-between md:items-baseline">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
+              <RainbowTextBlue>paran neko</RainbowTextBlue> <RainbowText>studio</RainbowText>
+            </h1>
+            {/* Using the improved tagline we discussed */}
+            <p className="text-xl sm:text-2xl text-muted-foreground mt-4 md:mt-0 md:text-right max-w-sm leading-relaxed">
+              just for fun.
+            </p>
+          </div>
+
+          {/* Large Image container */}
+          <div className="mb-16"> {/* Added margin for space below image */}
+            <img
+              src={maiScreenImage} // Make sure this is a high-resolution image
+              alt="Image related to technology or 3D printing"
+              // The key change is removing max-h-96 from here 👇
+              className="rounded-3xl shadow-2xl w-full object-cover" 
+            />
+          </div>
+          
           <Button 
             size="lg"
             className="px-8 py-6 rounded-full text-lg font-medium"
@@ -80,7 +104,7 @@ export default function Home() {
       {/* Technology Section */}
       <section id="about" className="py-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-left">
             <div>
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
                 Precision <RainbowText>technology</RainbowText>
@@ -105,7 +129,7 @@ export default function Home() {
             </div>
             <div className="lg:pl-8">
               <img
-                src="https://images.unsplash.com/photo-1612178991618-2928dcf1f137?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                src={maiScreenImage}
                 alt="Modern 3D printer in action"
                 className="rounded-3xl shadow-2xl w-full"
               />
@@ -117,11 +141,11 @@ export default function Home() {
       {/* Process Section */}
       <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+          <div className="mb-16">
+            <h2 className="text-left text-4xl sm:text-5xl font-bold mb-6">
               From idea to <RainbowText>reality</RainbowText>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-left text-xl text-muted-foreground max-w-2xl mx-auto">
               Our streamlined process ensures every project meets the highest standards of quality and precision.
             </p>
           </div>
@@ -191,7 +215,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">3D Print Studio</h3>
+              <h3 className="text-lg font-semibold mb-4">paran neko studio</h3>
               <p className="text-primary-foreground/70 text-sm">
                 Creating the future, one layer at a time.
               </p>
@@ -230,7 +254,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-sm text-primary-foreground/70">
-            <p>&copy; 2024 3D Print Studio. All rights reserved.</p>
+            <p>&copy; paran neko studio. all rights reserved.</p>
           </div>
         </div>
       </footer>

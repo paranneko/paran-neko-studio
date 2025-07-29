@@ -10,3 +10,19 @@ export function RainbowText({ children, className = "" }: RainbowTextProps) {
     </span>
   );
 }
+
+export function RainbowTextPink({ children, className = "" }: RainbowTextProps) {
+  return (
+    <span className={`rainbow-gradient-pink ${className}`}>
+      {children}
+    </span>
+  );
+}
+
+export function RainbowTextBlue({ children, className = "" }: RainbowTextProps) {
+  return (
+    <span className={`rainbow-gradient-blue ${className}`}>
+      {children}
+    </span>
+  );
+}

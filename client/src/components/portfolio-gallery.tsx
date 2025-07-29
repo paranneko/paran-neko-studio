@@ -198,7 +198,7 @@ export function PortfolioGallery() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Featured <span className="rainbow-gradient">Creations</span>
+            Showcase <span className="rainbow-gradient-pink">Portfolio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Each piece represents hours of meticulous design and precision printing, showcasing the endless possibilities of 3D technology.

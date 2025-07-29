@@ -65,8 +65,28 @@
 @layer utilities {
   .rainbow-gradient {
     background: linear-gradient(90deg, 
-      hsl(200, 70%, 70%) 0%, 
-      hsl(280, 60%, 75%) 100%
+      hsl(200, 44%, 59%) 0%, 
+      hsl(280, 59%, 79%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rainbow-gradient-pink {
+    background: linear-gradient(90deg, 
+      hsl(310, 55%, 72%) 0%, 
+      hsl(280, 63%, 65%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rainbow-gradient-blue {
+    background: linear-gradient(90deg, 
+      hsl(218, 62%, 45%) 0%, 
+      hsl(219, 74%, 68%) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
