@@ -54,11 +54,17 @@ export function FeaturesSection() {
   const activeFeatureData = features.find(f => f.id === activeFeature);
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-muted">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="text-center mb-16">
+        {/* <div className="mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Significant <span className="rainbow-gradient">capabilities</span>
+            mai <span className="rainbow-gradient">^2</span>
+          </h2>
+        </div> */}
+
+        <div className="flex justify-between items-end mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold">
+            mai <span className="rainbow-gradient">^2</span>
           </h2>
         </div>
         
@@ -67,7 +73,7 @@ export function FeaturesSection() {
           {/* Left side - Expandable list */}
           <div className="space-y-4">
             {features.map((feature) => (
-              <div key={feature.id} className="border border-border rounded-2xl overflow-hidden">
+              <div key={feature.id} className="bg-background border border-border rounded-2xl overflow-hidden">
                 <Button
                   variant="ghost"
                   className="w-full p-6 text-left justify-between h-auto hover:bg-muted/50"

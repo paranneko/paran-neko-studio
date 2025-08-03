@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { RainbowText, RainbowTextBlue } from "@/components/rainbow-text";
+import { RainbowText, RainbowTextBlue, RainbowTextBrown, RainbowTextRed, RainbowTextGreen } from "@/components/rainbow-text";
 import { PortfolioGallery } from "@/components/portfolio-gallery";
 import { FeaturesSection } from "@/components/features-section";
 import { EssentialsSection } from "@/components/essentials-section";
 import { Lightbulb, Box, ServerCog, Gem, Instagram, Twitter, Linkedin, Menu } from "lucide-react";
-import maiScreenImage from "../images/mai_screen.jpg";
+import maiScreenImage from "../images/mai_screen.webp";
 import catIcon from "../images/paran_neko.png";
 
 export default function Home() {
@@ -36,12 +36,12 @@ export default function Home() {
               >
                 Portfolio
               </button>
-              <button 
+              {/* <button 
                 onClick={() => scrollToSection('about')}
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 About
-              </button>
+              </button> */}
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -71,22 +71,21 @@ export default function Home() {
           </div>
 
           {/* Large Image container */}
-          <div className="mb-16"> {/* Added margin for space below image */}
+          <div> {/* Added margin for space below image */}
             <img
-              src={maiScreenImage} // Make sure this is a high-resolution image
+              src={maiScreenImage}
               alt="Image related to technology or 3D printing"
-              // The key change is removing max-h-96 from here 👇
               className="rounded-3xl shadow-2xl w-full object-cover" 
             />
           </div>
           
-          <Button 
+          {/* <Button 
             size="lg"
             className="px-8 py-6 rounded-full text-lg font-medium"
             onClick={() => scrollToSection('portfolio')}
           >
             Explore Portfolio
-          </Button>
+          </Button> */}
         </div>
       </section>
 
@@ -102,12 +101,12 @@ export default function Home() {
       <EssentialsSection />
 
       {/* Technology Section */}
-      <section id="about" className="py-20">
+      <section id="about" className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-left">
             <div>
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-                Precision <RainbowText>technology</RainbowText>
+                <RainbowTextBrown>capy</RainbowTextBrown> keyboard
               </h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 Using state-of-the-art 3D printing technology, every piece is crafted with unparalleled accuracy and attention to detail. From concept to creation, we bring your wildest ideas to life.
@@ -143,10 +142,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="mb-16">
             <h2 className="text-left text-4xl sm:text-5xl font-bold mb-6">
-              From idea to <RainbowText>reality</RainbowText>
+              <RainbowTextRed>t0ky0</RainbowTextRed> tower
             </h2>
             <p className="text-left text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our streamlined process ensures every project meets the highest standards of quality and precision.
+              {/* Our streamlined process ensures every project meets the highest standards of quality and precision. */}
             </p>
           </div>
           
@@ -188,14 +187,14 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Ready to bring your <RainbowText>vision</RainbowText> to life?
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 mb-16">
+            <h2 className="text-left text-4xl sm:text-5xl font-bold mb-6">
+            what's <RainbowTextGreen>next</RainbowTextGreen>?
           </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Let's collaborate on your next 3D printing project. From prototypes to art pieces, we're here to make it happen.
+            {/* Let's collaborate on your next 3D printing project. From prototypes to art pieces, we're here to make it happen. */}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="px-8 py-6 rounded-full text-lg font-medium">
               Start a Project
             </Button>
@@ -206,14 +205,14 @@ export default function Home() {
             >
               View Pricing
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-16">
+      <footer className="bg-primary text-primary-foreground py-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
+          {/* <div className="grid md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4">paran neko studio</h3>
               <p className="text-primary-foreground/70 text-sm">
@@ -252,8 +251,8 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-          </div>
-          <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-sm text-primary-foreground/70">
+          </div> */}
+          <div className="border-t border-primary-foreground/20 mt-4 pt-4 text-sm text-primary-foreground/70">
             <p>&copy; paran neko studio. all rights reserved.</p>
           </div>
         </div>

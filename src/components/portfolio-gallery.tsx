@@ -3,10 +3,18 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
 import { ImageModal } from "./image-modal";
 
+import capy_key from "../images/capy_key1.jpg";
+import volley_girl from "../images/volleyball_girl.jpg";
+import tokyo from "../images/tokyo_1.jpg";
+import super_auto_pets from "../images/super_auto_pets.jpg";
+import anime_girl from "../images/forgot_her_name.jpg";
+import mai_mai from "../images/mai6.jpg";
+import long_keyboard from "../images/long_keyboard.jpg";
+
 const portfolioItems = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: mai_mai,
     alt: "Detailed 3D printed robot miniature",
     title: "Mechanical Robot Miniature",
     description: "This intricate robot figure showcases the precision capabilities of modern 3D printing. Every mechanical detail, from the smallest gear to the articulated joints, demonstrates the perfect fusion of engineering and artistry.",
@@ -19,7 +27,7 @@ const portfolioItems = [
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: capy_key,
     alt: "Geometric patterned vase in rainbow colors",
     title: "Rainbow Lattice Vase",
     description: "A stunning example of how 3D printing can create complex geometric patterns impossible to achieve with traditional manufacturing. The rainbow PLA filament creates a mesmerizing gradient effect throughout the intricate lattice structure.",
@@ -32,7 +40,7 @@ const portfolioItems = [
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: long_keyboard,
     alt: "Miniature architectural model house",
     title: "Architectural Scale Model",
     description: "This detailed architectural model demonstrates the precision possible in miniature construction. Every window, door, and texture has been carefully designed and printed to create a perfect scale representation.",
@@ -45,7 +53,7 @@ const portfolioItems = [
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: tokyo,
     alt: "Colorful 3D printed puzzle pieces",
     title: "Interlocking Puzzle System",
     description: "These precision-engineered puzzle pieces showcase the ability to create complex interlocking mechanisms with tight tolerances. Each piece fits perfectly with its neighbors, creating satisfying tactile feedback.",
@@ -58,7 +66,7 @@ const portfolioItems = [
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: volley_girl,
     alt: "Detailed dragon sculpture 3D print",
     title: "Fantasy Dragon Sculpture",
     description: "This majestic dragon sculpture pushes the boundaries of detail possible in 3D printing. Every scale, wing membrane, and facial feature has been meticulously crafted to create a truly impressive display piece.",
@@ -71,7 +79,7 @@ const portfolioItems = [
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: super_auto_pets,
     alt: "Premium smartphone case with geometric design",
     title: "Geometric Phone Case",
     description: "This premium smartphone case combines protection with style. The geometric pattern isn't just aesthetic—it's engineered to provide maximum impact absorption while maintaining a slim profile.",
@@ -84,7 +92,7 @@ const portfolioItems = [
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: anime_girl,
     alt: "Minimalist desk organizer with compartments",
     title: "Modular Desk Organizer",
     description: "Clean lines and functional design meet in this modular desk organizer. Each compartment is precisely sized for common office items, while the modular design allows for customization and expansion.",
@@ -93,45 +101,6 @@ const portfolioItems = [
       { label: "Material", value: "Recycled PETG" },
       { label: "Capacity", value: "Pens, clips, phone" },
       { label: "Surface", value: "Non-slip base" }
-    ]
-  },
-  {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    alt: "Futuristic curved lamp design",
-    title: "Parametric Table Lamp",
-    description: "This organic lamp design was created using parametric modeling techniques. The flowing curves aren't just beautiful—they're mathematically optimized for both structural integrity and optimal light distribution.",
-    details: [
-      { label: "Power", value: "LED 12W warm white" },
-      { label: "Material", value: "Translucent PETG" },
-      { label: "Control", value: "Touch dimmer" },
-      { label: "Design", value: "Parametric algorithm" }
-    ]
-  },
-  {
-    id: 9,
-    src: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    alt: "Complex mechanical gear system",
-    title: "Functional Gear Train",
-    description: "This working mechanical system demonstrates the precision possible in 3D printing. All gears mesh perfectly and rotate smoothly, showcasing the potential for creating functioning mechanical assemblies.",
-    details: [
-      { label: "Gears", value: "12 precision gears" },
-      { label: "Tolerance", value: "±0.02mm" },
-      { label: "Material", value: "Nylon PA12" },
-      { label: "Assembly", value: "Print-in-place" }
-    ]
-  },
-  {
-    id: 10,
-    src: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    alt: "Intricate jewelry with filigree patterns",
-    title: "Filigree Pendant",
-    description: "This delicate jewelry piece showcases the incredible detail possible with high-resolution 3D printing. The intricate filigree pattern would be impossible to create by hand, yet 3D printing makes it achievable.",
-    details: [
-      { label: "Material", value: "Sterling silver" },
-      { label: "Technique", value: "Lost-PLA casting" },
-      { label: "Weight", value: "8.5 grams" },
-      { label: "Finish", value: "Hand-polished" }
     ]
   }
 ];
@@ -147,7 +116,7 @@ export function PortfolioGallery() {
       const scrollLeft = gallery.scrollLeft;
       const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
       
-      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollLeft(scrollLeft > 7);
       // Calculate the position where last image appears with correct left offset
       const imageWidth = 384;
       const gap = 24;
@@ -194,16 +163,14 @@ export function PortfolioGallery() {
   };
 
   return (
-    <section className="py-20 bg-muted">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+          <h2 className="text-left text-4xl sm:text-5xl font-bold mb-6">
             Showcase <span className="rainbow-gradient-pink">Portfolio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Each piece represents hours of meticulous design and precision printing, showcasing the endless possibilities of 3D technology.
+            {/* some projects. */}
           </p>
-        </div>
         
         {/* Horizontal Scrolling Gallery */}
         <div className="relative">

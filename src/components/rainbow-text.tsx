@@ -26,3 +26,35 @@ export function RainbowTextBlue({ children, className = "" }: RainbowTextProps) 
     </span>
   );
 }
+
+export function RainbowTextSkyBlue({ children, className = "" }: RainbowTextProps) {
+  return (
+    <span className={`rainbow-gradient-skyblue ${className}`}>
+      {children}
+    </span>
+  );
+}
+
+export function RainbowTextRed({ children, className = "" }: RainbowTextProps) {
+  return (
+    <span className={`rainbow-gradient-red ${className}`}>
+      {children}
+    </span>
+  );
+}
+
+export function RainbowTextBrown({ children, className = "" }: RainbowTextProps) {
+  return (
+    <span className={`rainbow-gradient-brown ${className}`}>
+      {children}
+    </span>
+  );
+}
+
+export function RainbowTextGreen({ children, className = "" }: RainbowTextProps) {
+  return (
+    <span className={`rainbow-gradient-green ${className}`}>
+      {children}
+    </span>
+  );
+}

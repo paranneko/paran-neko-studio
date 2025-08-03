@@ -7,11 +7,11 @@ export function EssentialsSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-end mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold">
-            3D Print <span className="rainbow-gradient">essentials</span>.
+            <span className="rainbow-gradient-skyblue">looong</span> keyboard
           </h2>
-          <Button variant="link" className="text-blue-600 p-0 h-auto">
+          {/* <Button variant="link" className="text-blue-600 p-0 h-auto">
             All 3D printing services <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          </Button> */}
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -23,20 +23,20 @@ export function EssentialsSection() {
                 Bring your ideas to life with precision prototyping, 
                 functional testing models, and more.
               </p>
-              <Button variant="link" className="text-blue-600 p-0">
+              {/* <Button variant="link" className="text-blue-600 p-0">
                 Shop Custom Prototypes <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
             </div>
             
-            <div className="grid grid-cols-3 gap-4">
-              <div className="bg-muted rounded-2xl p-4 aspect-square flex items-center justify-center">
+            <div className="grid grid-cols-1">
+              <div className="bg-muted rounded-2xl p-4 flex items-center justify-center">
                 <img
-                  src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200"
+                  src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=200"
                   alt="Mechanical prototype"
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
-              <div className="bg-muted rounded-2xl p-4 aspect-square flex items-center justify-center">
+              {/* <div className="bg-muted rounded-2xl p-4 aspect-square flex items-center justify-center">
                 <img
                   src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200"
                   alt="Architectural model"
@@ -49,7 +49,7 @@ export function EssentialsSection() {
                   alt="Functional parts"
                   className="w-full h-full object-cover rounded-xl"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           
@@ -61,9 +61,9 @@ export function EssentialsSection() {
                 Professional design consultation, 3D modeling, 
                 and optimization for perfect prints.
               </p>
-              <Button variant="link" className="text-blue-600 p-0">
+              {/* <Button variant="link" className="text-blue-600 p-0">
                 Explore Design Services <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
             </div>
             
             <div className="relative">
