@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import mai_switch from "../images/mai_switch.jpg";
 import mai_ito from "../images/mai_ito.jpg";
 import mai_small from "../images/mai_small.jpg";
-import mai_first from "../images/mai_first.jpg";
+import mai_first from "../images/mai_first.webp";
 
 interface Feature {
   id: string;
