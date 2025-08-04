@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import mai_switch from "../images/mai_switch.jpg";
-import mai_ito from "../images/mai_ito.jpg";
-import mai_small from "../images/mai_small.jpg";
+import mai_switch from "../images/mai_switch.webp";
+import mai_ito from "../images/mai_ito.webp";
+import mai_small from "../images/mai_small.webp";
 import mai_first from "../images/mai_first.webp";
 
 interface Feature {
@@ -24,7 +24,7 @@ const features: Feature[] = [
   },
   {
     id: "materials",
-    title: "keyboard switch mounting system",
+    title: "switch mounting system",
     description: "Custom-built with a remixed switch mount for 150g TTC Silent Frozen V2 switches, running QMK/VIA on an STM32 microcontroller.",
     image: mai_switch,
     imageAlt: "button base"

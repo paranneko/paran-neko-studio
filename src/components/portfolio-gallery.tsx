@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
 import { ImageModal } from "./image-modal";
 
-import capy_key from "../images/capy_key1.jpg";
-import volley_girl from "../images/volleyball_girl.jpg";
+import capy_key from "../images/capy_key1.webp";
+import volley_girl from "../images/volleyball_girl.webp";
 import tokyo from "../images/tokyo_1.webp";
-import super_auto_pets from "../images/super_auto_pets.jpg";
-import anime_girl from "../images/forgot_her_name.jpg";
-import mai_mai from "../images/mai6.jpg";
-import long_keyboard from "../images/long_keyboard.jpg";
+import super_auto_pets from "../images/super_auto_pets.webp";
+import anime_girl from "../images/forgot_her_name.webp";
+import mai_mai from "../images/mai6.webp";
+import long_keyboard from "../images/long_keyboard.webp";
 
 const portfolioItems = [
   {

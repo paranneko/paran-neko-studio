@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import looong from "../images/looong.webp";
-import long_tinker from "../images/long_tinker.png";
+import long_tinker from "../images/long_tinker.webp";
 import long_diode from "../images/long_diode.webp";
 import long_keycap from "../images/long_keycap.webp";
 import looong_all from "../images/looong-a.webp";

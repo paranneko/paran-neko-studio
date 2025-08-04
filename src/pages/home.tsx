@@ -5,7 +5,7 @@ import { FeaturesSection } from "@/components/features-section";
 import { EssentialsSection } from "@/components/essentials-section";
 import { Lightbulb, Box, ServerCog, Gem, Instagram, Twitter, Linkedin, Menu } from "lucide-react";
 import maiScreenImage from "../images/mai_screen.webp";
-import capyKey from "../images/capy_key1.jpg";
+import capyKey from "../images/capy_key1.webp";
 import looong from "../images/looong.webp";
 import catIcon from "../images/paran_neko.png";
 import tokyo from "../images/tokyo_1.webp";
