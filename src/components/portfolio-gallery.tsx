@@ -64,8 +64,8 @@ const portfolioItems = [
     id: 5,
     src: volley_girl,
     alt: "volleyball girl",
-    title: "volleyball switch girl",
-    description: "Poly female remixed to look like a volleyball player (my friend) setting a volleyball. Remixed volleyball to hold a switch to make it clickable.",
+    title: "volleyball girl setting",
+    description: "Poly model remixed to look like a volleyball player (my friend) setting a volleyball. Remixed volleyball to hold a switch to make it clickable.",
     details: [
       { label: "Switch", value: "clicky" }
     ]
