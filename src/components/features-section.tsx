@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import mai_switch from "../images/mai_switch.jpg";
+import mai_ito from "../images/mai_ito.jpg";
+import mai_small from "../images/mai_small.jpg";
+import mai_first from "../images/mai_first.jpg";
 
 interface Feature {
   id: string;
@@ -12,37 +16,37 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    id: "precision",
-    title: "Precision Engineering",
-    description: "With our advanced 3D printing technology, every piece is crafted with unparalleled accuracy and attention to detail. From intricate mechanical parts to artistic sculptures, we achieve tolerances as tight as ±0.02mm, ensuring your vision becomes reality with perfect precision.",
-    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    id: "mai2",
+    title: "custom mai^2 controller",
+    description: "The buttons and base have been recreated (via blender) to feature a special curvature that makes spins and slides easier.",
+    image: mai_first,
     imageAlt: "Precision 3D printed mechanical components"
   },
   {
     id: "materials",
-    title: "Advanced Materials",
-    description: "Choose from our extensive selection of premium materials including PLA+, PETG, TPU, Nylon, and specialty filaments. Each material is carefully selected for its unique properties, whether you need flexibility, strength, heat resistance, or beautiful aesthetics for your project.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    imageAlt: "Various 3D printing materials and colorful filaments"
+    title: "keyboard switch mounting system",
+    description: "Custom-built with a remixed switch mount for 150g TTC Silent Frozen V2 switches, running QMK/VIA on an STM32 microcontroller.",
+    image: mai_switch,
+    imageAlt: "button base"
   },
   {
     id: "customization",
-    title: "Complete Customization",
-    description: "Every project is unique, and we embrace that. From initial concept to final finishing, we work closely with you to ensure your vision is perfectly realized. Whether it's a one-off prototype or a small production run, we adapt our process to your specific needs.",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    imageAlt: "Custom 3D printed architectural models and prototypes"
+    title: "ito film touch panel",
+    description: "The touch panel is made of glass and lined with ITO conductive film connected through wire to emulate the 34 touch zones.",
+    image: mai_ito,
+    imageAlt: "ito film"
   },
   {
     id: "support",
-    title: "Expert Support",
-    description: "Our team of experienced engineers and designers are here to guide you through every step of the process. From design optimization to material selection and post-processing recommendations, we provide comprehensive support to ensure project success.",
-    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    imageAlt: "3D printing expert working with advanced equipment"
+    title: "small prototype build",
+    description: "The first prototype build was made with a 32 inch and using scaled up 3d printed buttons from whowechina. Uses a wood base instead of aluminum extrusion base.",
+    image: mai_small,
+    imageAlt: "small prototype"
   }
 ];
 
 export function FeaturesSection() {
-  const [activeFeature, setActiveFeature] = useState<string>("precision");
+  const [activeFeature, setActiveFeature] = useState<string>("mai2");
 
   const toggleFeature = (featureId: string) => {
     // Always keep one item open - if clicking the currently active item, don't close it
@@ -119,7 +123,7 @@ export function FeaturesSection() {
         {/* Mobile Layout */}
         <div className="lg:hidden space-y-4">
           {features.map((feature) => (
-            <div key={feature.id} className="border border-border rounded-2xl overflow-hidden">
+            <div key={feature.id} className="bg-background border border-border rounded-2xl overflow-hidden">
               <Button
                 variant="ghost"
                 className="w-full p-6 text-left justify-between h-auto hover:bg-muted/50"

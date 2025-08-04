@@ -5,7 +5,7 @@ import { ImageModal } from "./image-modal";
 
 import capy_key from "../images/capy_key1.jpg";
 import volley_girl from "../images/volleyball_girl.jpg";
-import tokyo from "../images/tokyo_1.jpg";
+import tokyo from "../images/tokyo_1.webp";
 import super_auto_pets from "../images/super_auto_pets.jpg";
 import anime_girl from "../images/forgot_her_name.jpg";
 import mai_mai from "../images/mai6.jpg";
@@ -15,92 +15,79 @@ const portfolioItems = [
   {
     id: 1,
     src: mai_mai,
-    alt: "Detailed 3D printed robot miniature",
-    title: "Mechanical Robot Miniature",
-    description: "This intricate robot figure showcases the precision capabilities of modern 3D printing. Every mechanical detail, from the smallest gear to the articulated joints, demonstrates the perfect fusion of engineering and artistry.",
+    alt: "mai^2",
+    title: "mai^2 controller",
+    description: "Based on the rhythm game MaiMai by Sega, this is a custom controller which emulates the game. Feels about 95% of the regular game with low latency delays.",
     details: [
-      { label: "Material", value: "PLA+ Premium" },
-      { label: "Layer Height", value: "0.1mm" },
-      { label: "Print Time", value: "18 hours" },
-      { label: "Post-Processing", value: "Hand-painted details" }
+      { label: "Button Controller", value: "Bonsai C4 STM32F411CEU6" },
+      { label: "Touch Controller", value: "SAMD21" },
+      { label: "NFC/AIME Reader", value: "Pi Pico w/ PN532" },
     ]
   },
   {
     id: 2,
     src: capy_key,
-    alt: "Geometric patterned vase in rainbow colors",
-    title: "Rainbow Lattice Vase",
-    description: "A stunning example of how 3D printing can create complex geometric patterns impossible to achieve with traditional manufacturing. The rainbow PLA filament creates a mesmerizing gradient effect throughout the intricate lattice structure.",
+    alt: "capy keyboard",
+    title: "Capybara Inspired Keyboard",
+    description: "A Capybara inspired keyboard built for my friend, 2d image designed by his sister. Entirely 3d printed w/ RP2040 microcontroller. Multicolor prints w/ Bambu A1.",
     details: [
-      { label: "Material", value: "Rainbow PLA" },
-      { label: "Height", value: "180mm" },
-      { label: "Infill", value: "25% Lattice" },
-      { label: "Special Feature", value: "Food-safe coating" }
+      { label: "Material", value: "PLA" },
+      { label: "Controller", value: "RP2040" },
+      { label: "Wiring/PCB", value: "handwired" },
     ]
   },
   {
     id: 3,
     src: long_keyboard,
-    alt: "Miniature architectural model house",
-    title: "Architectural Scale Model",
-    description: "This detailed architectural model demonstrates the precision possible in miniature construction. Every window, door, and texture has been carefully designed and printed to create a perfect scale representation.",
+    alt: "long keyboard",
+    title: "loong keyboard",
+    description: "This keyboard is inspired by the gboard by google. What started as a joke came to reality with a custom design and handwiring job to ensure a workable final build.",
     details: [
-      { label: "Scale", value: "1:200" },
-      { label: "Material", value: "White Resin" },
-      { label: "Details", value: "Laser-etched windows" },
-      { label: "Finish", value: "UV-cured coating" }
+      { label: "Controller", value: "Bonsai C4 STM32F411CEU6" },
+      { label: "Full Length", value: "~4 feet" },
+      { label: "Switches", value: "Boba U4 Silent" },
+      { label: "Keycaps", value: "XVX Skyline Low Profile" }
     ]
   },
   {
     id: 4,
     src: tokyo,
-    alt: "Colorful 3D printed puzzle pieces",
-    title: "Interlocking Puzzle System",
-    description: "These precision-engineered puzzle pieces showcase the ability to create complex interlocking mechanisms with tight tolerances. Each piece fits perfectly with its neighbors, creating satisfying tactile feedback.",
+    alt: "nano block tokyo tower",
+    title: "tokyo tower nano block (scaled up)",
+    description: "",
     details: [
-      { label: "Pieces", value: "64 unique parts" },
-      { label: "Tolerance", value: "±0.05mm" },
-      { label: "Material", value: "Multi-color PETG" },
-      { label: "Assembly", value: "No glue required" }
+      { label: "Pieces", value: "~274 pieces" },
+      { label: "unit size", value: "10mm" },
     ]
   },
   {
     id: 5,
     src: volley_girl,
-    alt: "Detailed dragon sculpture 3D print",
-    title: "Fantasy Dragon Sculpture",
-    description: "This majestic dragon sculpture pushes the boundaries of detail possible in 3D printing. Every scale, wing membrane, and facial feature has been meticulously crafted to create a truly impressive display piece.",
+    alt: "volleyball girl",
+    title: "volleyball switch girl",
+    description: "Poly female remixed to look like a volleyball player (my friend) setting a volleyball. Remixed volleyball to hold a switch to make it clickable.",
     details: [
-      { label: "Height", value: "250mm" },
-      { label: "Print Time", value: "32 hours" },
-      { label: "Material", value: "Bronze-filled PLA" },
-      { label: "Finish", value: "Polished and patinated" }
+      { label: "Switch", value: "clicky" }
     ]
   },
   {
     id: 6,
     src: super_auto_pets,
-    alt: "Premium smartphone case with geometric design",
-    title: "Geometric Phone Case",
-    description: "This premium smartphone case combines protection with style. The geometric pattern isn't just aesthetic—it's engineered to provide maximum impact absorption while maintaining a slim profile.",
+    alt: "Super auto pets inspired prints",
+    title: "super auto pets prints",
+    description: "Printed as a gift for my friend who likes super auto pets.",
     details: [
-      { label: "Compatibility", value: "iPhone 15 Pro" },
-      { label: "Material", value: "TPU Flexible" },
-      { label: "Protection", value: "Drop-tested 3m" },
-      { label: "Features", value: "Wireless charging compatible" }
+      { label: "game", value: "super auto pets" }
     ]
   },
   {
     id: 7,
     src: anime_girl,
-    alt: "Minimalist desk organizer with compartments",
-    title: "Modular Desk Organizer",
-    description: "Clean lines and functional design meet in this modular desk organizer. Each compartment is precisely sized for common office items, while the modular design allows for customization and expansion.",
+    alt: "Iroha ishhiki",
+    title: "anime girl 3d print w/ stand",
+    description: "anime girl for my friend, iroha isshiki",
     details: [
-      { label: "Modules", value: "5 interlocking pieces" },
-      { label: "Material", value: "Recycled PETG" },
-      { label: "Capacity", value: "Pens, clips, phone" },
-      { label: "Surface", value: "Non-slip base" }
+      { label: "anime", value: "oregairu" }
     ]
   }
 ];
@@ -165,7 +152,7 @@ export function PortfolioGallery() {
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <h2 className="text-left text-4xl sm:text-5xl font-bold mb-6">
+          <h2 className="text-left text-4xl sm:text-5xl font-bold mb-16">
             Showcase <span className="rainbow-gradient-pink">Portfolio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -188,7 +175,7 @@ export function PortfolioGallery() {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-96 h-96 object-cover rounded-2xl shadow-lg"
+                  className="w-[20rem] h-[30rem] object-cover rounded-2xl shadow-lg"
                 />
                 <Button
                   size="icon"

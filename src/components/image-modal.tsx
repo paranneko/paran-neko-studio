@@ -1,6 +1,8 @@
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { X } from "lucide-react";
+
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -17,19 +19,26 @@ interface ImageModalProps {
 export function ImageModal({ isOpen, onClose, image }: ImageModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="modal-backdrop max-w-4xl w-full max-h-[90vh] p-0 gap-0 border-0 rounded-3xl overflow-hidden">
+      <DialogContent className="modal-backdrop max-w-4xl w-full max-h-[90vh] p-0 gap-0 border-0 rounded-3xl overflow-y-auto">
         <VisuallyHidden>
           <DialogTitle>{image.title}</DialogTitle>
           <DialogDescription>{image.description}</DialogDescription>
         </VisuallyHidden>
-        <div className="grid lg:grid-cols-2 h-full">
-          <div className="relative">
+        <div className="grid lg:grid-cols-2">
+          <div className="relative overflow-auto">
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover"
+              className="w-full max-h-[70vh] h-auto object-cover"
             />
           </div>
+            <button
+                onClick={onClose}
+                aria-label="Close"
+                className="absolute top-4 right-4 z-50 flex items-center justify-center w-10 h-10 bg-white/80 shadow-md rounded-full transition-opacity hover:opacity-80"
+            >
+                <X className="h-6 w-6 text-black" />
+            </button>
           <div className="p-8 lg:p-12 overflow-y-auto">
             <h3 className="text-3xl font-bold mb-4 text-foreground">{image.title}</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
@@ -43,7 +52,7 @@ export function ImageModal({ isOpen, onClose, image }: ImageModalProps) {
                 </div>
               ))}
             </div>
-            <Button 
+            {/* <Button 
               className="w-full py-6 text-lg font-medium rounded-full bg-primary hover:bg-primary/90"
               onClick={() => {
                 // In a real app, this would open a contact form or redirect
@@ -51,7 +60,7 @@ export function ImageModal({ isOpen, onClose, image }: ImageModalProps) {
               }}
             >
               Request Similar Design
-            </Button>
+            </Button> */}
           </div>
         </div>
       </DialogContent>

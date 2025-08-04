@@ -5,7 +5,10 @@ import { FeaturesSection } from "@/components/features-section";
 import { EssentialsSection } from "@/components/essentials-section";
 import { Lightbulb, Box, ServerCog, Gem, Instagram, Twitter, Linkedin, Menu } from "lucide-react";
 import maiScreenImage from "../images/mai_screen.webp";
+import capyKey from "../images/capy_key1.jpg";
+import looong from "../images/looong.webp";
 import catIcon from "../images/paran_neko.png";
+import tokyo from "../images/tokyo_1.webp";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -30,12 +33,12 @@ export default function Home() {
             <span>paran neko studio</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <button 
+              {/* <button 
                 onClick={() => scrollToSection('portfolio')}
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 Portfolio
-              </button>
+              </button> */}
               {/* <button 
                 onClick={() => scrollToSection('about')}
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -109,26 +112,26 @@ export default function Home() {
                 <RainbowTextBrown>capy</RainbowTextBrown> keyboard
               </h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Using state-of-the-art 3D printing technology, every piece is crafted with unparalleled accuracy and attention to detail. From concept to creation, we bring your wildest ideas to life.
+                fully 3d printed, inspired by my friend's drawings, creations, and love for capybaras.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-                  <span className="text-foreground">0.1mm layer precision</span>
+                  <span className="text-foreground">rp2040 microcontroller</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
-                  <span className="text-foreground">Multiple material support</span>
+                  <span className="text-foreground">QMK/VIA compatible</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                  <span className="text-foreground">Complex geometry capabilities</span>
+                  <span className="text-foreground">multi-color-print</span>
                 </div>
               </div>
             </div>
             <div className="lg:pl-8">
               <img
-                src={maiScreenImage}
+                src={capyKey}
                 alt="Modern 3D printer in action"
                 className="rounded-3xl shadow-2xl w-full"
               />
@@ -140,16 +143,68 @@ export default function Home() {
       {/* Process Section */}
       <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="mb-16">
+          {/* <div className="mb-16">
             <h2 className="text-left text-4xl sm:text-5xl font-bold mb-6">
               <RainbowTextRed>t0ky0</RainbowTextRed> tower
             </h2>
             <p className="text-left text-xl text-muted-foreground max-w-2xl mx-auto">
-              {/* Our streamlined process ensures every project meets the highest standards of quality and precision. */}
             </p>
+            <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+                    <span className="text-foreground">nano block inspired</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
+                    <span className="text-foreground">pla and petg</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                    <span className="text-foreground">Complex geometry capabilities</span>
+                </div>
+            </div>
+            <div className="lg:pl-8">
+              <img
+                src={tokyo}
+                alt="Modern 3D printer in action"
+                className="rounded-3xl shadow-2xl w-full"
+              />
+            </div>
+          </div> */}
+
+          <div className="grid lg:grid-cols-2 gap-16 items-left">
+            <div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+                <RainbowTextRed>t0ky0</RainbowTextRed> tower
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                design based on tokyo tower. each unit has been upscaled and custom designed to be 10mm (1u)
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+                    <span className="text-foreground">nano block inspired</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
+                    <span className="text-foreground">mix pla and petg</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                  <span className="text-foreground">~274 pieces</span>
+                </div>
+              </div>
+            </div>
+            <div className="lg:pl-8">
+              <img
+                src={tokyo}
+                alt="Modern 3D printer in action"
+                className="rounded-3xl shadow-2xl w-full"
+              />
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          {/* <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Lightbulb className="text-white w-6 h-6" />
@@ -181,12 +236,12 @@ export default function Home() {
               <h3 className="font-semibold text-lg mb-2">Finish</h3>
               <p className="text-muted-foreground text-sm">Post-processing and quality control</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-12">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 mb-16">
             <h2 className="text-left text-4xl sm:text-5xl font-bold mb-6">
             what's <RainbowTextGreen>next</RainbowTextGreen>?
@@ -194,18 +249,23 @@ export default function Home() {
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
             {/* Let's collaborate on your next 3D printing project. From prototypes to art pieces, we're here to make it happen. */}
           </p>
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="px-8 py-6 rounded-full text-lg font-medium">
-              Start a Project
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-6 rounded-full text-lg font-medium border-2"
+          <div className="flex flex-col sm:flex-row gap-4">
+            {/* <Button size="lg" className="px-8 py-6 rounded-full text-lg font-medium">
+              linkedin
+            </Button> */}
+            <a 
+            href="https://www.linkedin.com/in/ryan-van/" 
+            className="inline-flex items-center justify-center px-8 py-2 rounded-full text-lg font-medium bg-primary text-primary-foreground hover:bg-primary/90"
             >
-              View Pricing
-            </Button>
-          </div> */}
+            linkedin
+            </a>
+            <a 
+            href="https://github.com/paranneko" 
+            className="inline-flex items-center justify-center px-8 py-2 rounded-full text-lg font-medium bg-muted text-muted-foreground hover:bg-primary/90"
+            >
+            github
+            </a>
+          </div>
         </div>
       </section>
 
