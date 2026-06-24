@@ -10,8 +10,8 @@ import super_auto_pets from "../images/super_auto_pets.webp";
 import anime_girl from "../images/forgot_her_name.webp";
 import mai_mai from "../images/mai6.webp";
 import long_keyboard from "../images/long_keyboard.webp";
-import n003305 from "../images/_N003305.JPG";
-import project_2026 from "../images/20260618_092721.jpg";
+import n003305 from "../images/_N003305.webp";
+import project_2026 from "../images/20260618_092721.webp";
 
 const portfolioItems = [
   {
