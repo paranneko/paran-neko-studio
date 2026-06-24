@@ -137,6 +137,9 @@
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    will-change: scroll-position;
+    transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
   }
   
   .gallery-container::-webkit-scrollbar {

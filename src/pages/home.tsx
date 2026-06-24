@@ -74,11 +74,11 @@ export default function Home() {
           </div>
 
           {/* Large Image container */}
-          <div> {/* Added margin for space below image */}
+          <div>
             <img
               src={maiScreenImage}
               alt="Image related to technology or 3D printing"
-              className="rounded-3xl shadow-2xl w-full object-cover" 
+              className="rounded-3xl shadow-2xl w-full object-cover"
             />
           </div>
           
@@ -270,7 +270,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-8">
+      <footer className="bg-muted text-muted-foreground py-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           {/* <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -312,7 +312,7 @@ export default function Home() {
               </div>
             </div>
           </div> */}
-          <div className="border-t border-primary-foreground/20 mt-4 pt-4 text-sm text-primary-foreground/70">
+          <div className="border-t border-white/10 mt-4 pt-4 text-sm">
             <p>&copy; paran neko studio. all rights reserved.</p>
           </div>
         </div>

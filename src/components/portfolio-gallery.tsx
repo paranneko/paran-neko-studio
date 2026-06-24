@@ -10,6 +10,8 @@ import super_auto_pets from "../images/super_auto_pets.webp";
 import anime_girl from "../images/forgot_her_name.webp";
 import mai_mai from "../images/mai6.webp";
 import long_keyboard from "../images/long_keyboard.webp";
+import n003305 from "../images/_N003305.JPG";
+import project_2026 from "../images/20260618_092721.jpg";
 
 const portfolioItems = [
   {
@@ -59,6 +61,22 @@ const portfolioItems = [
       { label: "Pieces", value: "~274 pieces" },
       { label: "unit size", value: "10mm" },
     ]
+  },
+  {
+    id: 8,
+    src: n003305,
+    alt: "gengar volleyball",
+    title: "gengar volleyball",
+    description: "",
+    details: []
+  },
+  {
+    id: 9,
+    src: project_2026,
+    alt: "volleyball tournament trophy",
+    title: "volleyball tournament trophy",
+    description: "",
+    details: []
   },
   {
     id: 5,
@@ -130,21 +148,31 @@ export function PortfolioGallery() {
   const scrollGallery = (direction: 'left' | 'right') => {
     const gallery = document.getElementById('mainGallery');
     if (gallery) {
-      // Get the first image item to calculate its actual width + margin
       const firstItem = gallery.querySelector('.gallery-item') as HTMLElement;
       if (firstItem) {
         const itemRect = firstItem.getBoundingClientRect();
         const itemWidth = itemRect.width;
-        
-        // Get computed style to find the actual gap
         const computedStyle = window.getComputedStyle(gallery);
-        const gap = parseFloat(computedStyle.gap) || 24; // fallback to 24px
-        
-        // Calculate scroll amount
+        const gap = parseFloat(computedStyle.gap) || 24;
         const scrollAmount = itemWidth + gap;
-        
-        const scrollLeft = direction === 'left' ? -scrollAmount : scrollAmount;
-        gallery.scrollBy({ left: scrollLeft, behavior: 'smooth' });
+        const target = direction === 'left' ? -scrollAmount : scrollAmount;
+
+        const start = gallery.scrollLeft;
+        const end = start + target;
+        const duration = 400;
+        const startTime = performance.now();
+
+        const animate = (currentTime: number) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          gallery.scrollLeft = start + target * eased;
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          }
+        };
+
+        requestAnimationFrame(animate);
       }
     }
   };
@@ -179,7 +207,7 @@ export function PortfolioGallery() {
                 />
                 <Button
                   size="icon"
-                  className="plus-icon absolute bottom-4 right-4 w-10 h-10 bg-white/70 hover:bg-white/95 rounded-full text-foreground border-0"
+                  className="plus-icon absolute bottom-4 right-4 w-10 h-10 bg-foreground/10 hover:bg-foreground/20 rounded-full text-foreground border-0"
                 >
                   <Plus className="h-4 w-4" />
                 </Button>

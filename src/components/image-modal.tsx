@@ -35,9 +35,9 @@ export function ImageModal({ isOpen, onClose, image }: ImageModalProps) {
             <button
                 onClick={onClose}
                 aria-label="Close"
-                className="absolute top-4 right-4 z-50 flex items-center justify-center w-10 h-10 bg-white/80 shadow-md rounded-full transition-opacity hover:opacity-80"
+                className="absolute top-4 right-4 z-50 flex items-center justify-center w-10 h-10 bg-foreground/10 shadow-md rounded-full transition-opacity hover:opacity-80"
             >
-                <X className="h-6 w-6 text-black" />
+                <X className="h-6 w-6 text-foreground" />
             </button>
           <div className="p-8 lg:p-12 overflow-y-auto">
             <h3 className="text-3xl font-bold mb-4 text-foreground">{image.title}</h3>

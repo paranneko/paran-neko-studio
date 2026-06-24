@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import looong from "../images/looong.webp";
@@ -7,26 +10,50 @@ import long_keycap from "../images/long_keycap.webp";
 import looong_all from "../images/looong-a.webp";
 
 export function EssentialsSection() {
-  return (
-    <section className="py-20 bg-muted">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="flex justify-between items-end mb-8">
-          <h2 className="text-4xl sm:text-5xl font-bold">
-            <span className="rainbow-gradient-skyblue">looong</span> keyboard
-          </h2>
-          {/* <Button variant="link" className="text-blue-600 p-0 h-auto">
-            All 3D printing services <ArrowRight className="ml-2 h-4 w-4" />
-          </Button> */}
-        </div>
+  const isMobile = useIsMobile();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-        <div className="overflow-x-auto whitespace-nowrap mb-16 pb-4">
-          <img
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start end", "end start"],
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 30,
+  });
+
+  const translateX = useTransform(
+    smoothProgress,
+    [0, 1],
+    ["25%", isMobile ? "-85%" : "-70%"]
+  );
+
+  return (
+    <section className="bg-muted">
+      <div className="flex justify-between items-end mb-8 max-w-7xl mx-auto px-6 sm:px-8 pt-20">
+        <h2 className="text-4xl sm:text-5xl font-bold">
+          <span className="rainbow-gradient-skyblue">looong</span> keyboard
+        </h2>
+      </div>
+
+      <div
+        ref={scrollRef}
+        className="relative"
+        style={{ height: isMobile ? "120vh" : "200vh" }}
+      >
+        <div className="sticky top-[25vh] h-[50vh] flex items-center overflow-hidden">
+          <motion.img
             src={looong_all}
             alt="A very long, custom mechanical keyboard."
-            className="max-w-none h-auto rounded-3xl [max-height:125px]"
+            style={{ translateX }}
+            className="max-w-none h-auto rounded-3xl max-h-[125px] select-none will-change-transform"
+            draggable={false}
           />
         </div>
-        
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 pb-20">
         <div className="grid md:grid-cols gap-8">
           {/* Custom Prototypes */}
           <div className="bg-background rounded-3xl p-8 shadow-sm">
